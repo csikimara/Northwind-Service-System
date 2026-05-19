@@ -1,0 +1,313 @@
+{
+  "fujitsu_kn_master": {
+    "leiras": "Northwind Fujitsu Mérnöki Adatbázis - KN Sorozat MASTER",
+    "utolso_frissites": "2026-05-05",
+    "geptipusok": {
+      "ASEH07KNCA": {
+        "muszaki_adatok": {
+          "teljesitmeny_hutes_kw": "2.0 (0.9 - 2.9)",
+          "teljesitmeny_futes_kw": "2.5 (0.9 - 3.4)",
+          "energiaosztaly": "A++ / A+",
+          "seer_scop": "7.8 / 4.4",
+          "hutokozeg_tipus": "R32",
+          "halozati_aram": "230V / 1 / 50Hz",
+          "maximalis_aramfelvetel_A": "6.5",
+          "tomeg_belteri_kulteri_kg": "9 / 22",
+          "cso_meretek_mm": "6.35 folyadék / 9.52 gáz",
+          "uzemeltetesi_hatarok_kulso_hutes": "-10 ~ 50 °C",
+          "uzemeltetesi_hatarok_kulso_futes": "-15 ~ 24 °C",
+          "zajszint_belteri_hutes_dbA": "20 / 29 / 33 / 36 (csend./min./köz./max.)",
+          "zajszint_belteri_futes_dbA": "22 / 30 / 33 / 38 (csend./min./köz./max.)",
+          "zajszint_kulteri_hutes_futes_dbA": "43 / 44",
+          "hangteljesitmeny_belteri_hutes_futes_dbA": "51 / 52",
+          "hangteljesitmeny_kulteri_hutes_futes_dbA": "53 / 54",
+          "meret_belteri_mm": "784 x 270 x 222",
+          "meret_kulteri_mm": "663 x 541 x 290",
+          "kulteri_talpmeret_mm": "450 x 330",
+          "eves_fogyasztas_hutes_futes_kwh": "90 / 731",
+          "eves_koltseg_hutes_futes_ft": "3.380 / 27.449"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "alap_gaztoltet_g": "550",
+          "alap_gaztoltet_hossz_m": "15",
+          "plusz_gaz_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "650",
+          "maximalis_csohossz_m": "20",
+          "minimalis_csohossz_m": "3",
+          "maximalis_szintkulonbseg_m": "15"
+        },
+        "kezelesi_utmutato": "Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      },
+      "ASEH09KNCA": {
+        "muszaki_adatok": {
+          "teljesitmeny_hutes_kw": "2.5 (0.9 - 3.1)",
+          "teljesitmeny_futes_kw": "2.8 (0.9 - 4.0)",
+          "maximalis_aramfelvetel_A": "6.5",
+          "seer_scop": "7.4 / 4.4",
+          "zajszint_belteri_hutes_dbA": "20 / 29 / 35 / 38",
+          "zajszint_kulteri_hutes_futes_dbA": "44 / 45",
+          "eves_fogyasztas_hutes_futes_kwh": "118 / 763",
+          "eves_koltseg_hutes_futes_ft": "4.431 / 28.651"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "alap_gaztoltet_g": "550",
+          "alap_gaztoltet_hossz_m": "15",
+          "plusz_gaz_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "650",
+          "maximalis_csohossz_m": "20",
+          "minimalis_csohossz_m": "3"
+        },
+        "kezelesi_utmutato": "Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      },
+      "ASEH12KNCA": {
+        "muszaki_adatok": {
+          "teljesitmeny_hutes_kw": "3.4 (0.9 - 3.8)",
+          "teljesitmeny_futes_kw": "3.8 (0.9 - 4.8)",
+          "maximalis_aramfelvetel_A": "9.0",
+          "seer_scop": "7.0 / 4.4",
+          "tomeg_belteri_kulteri_kg": "9 / 24",
+          "zajszint_belteri_hutes_dbA": "20 / 32 / 36 / 40",
+          "zajszint_kulteri_hutes_futes_dbA": "49 / 49",
+          "eves_fogyasztas_hutes_futes_kwh": "170 / 795",
+          "eves_koltseg_hutes_futes_ft": "6.384 / 29.852"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "alap_gaztoltet_g": "630",
+          "alap_gaztoltet_hossz_m": "15",
+          "plusz_gaz_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "730",
+          "maximalis_csohossz_m": "20",
+          "minimalis_csohossz_m": "3"
+        },
+        "kezelesi_utmutato": "Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      }
+    },
+    "diagnosztikai_logikak": {
+      "fujitsu_kn_global_logic": {
+        "hibakodok": {
+          "OP_2_TIMER_0": { "hiba": "Kommunikációs hiba", "megoldas": "Beltéri-Kültéri adatfolyam hiba. Mérj DC 0-50V-ot a 2-3 kapcson." },
+          "OP_2_TIMER_1": { "hiba": "Vezetékes távkapcsoló hiba", "megoldas": "Ha van fali kezelő, ellenőrizd a bekötést." },
+          "OP_3_TIMER_2": { "hiba": "Beltéri hőcserélő szenzor", "megoldas": "CN7 csatlakozó, 10k Ohm @ 25°C." },
+          "OP_3_TIMER_5": { "hiba": "Beltéri beszívott levegő szenzor", "megoldas": "CN7 csatlakozó, 10k Ohm @ 25°C." },
+          "OP_4_TIMER_1": { "hiba": "Beltéri hőcserélő túlmelegedés", "megoldas": "Légszállítási hiba vagy extrém koszos szűrő fűtésben." },
+          "OP_6_TIMER_2": { "hiba": "Kültéri ventilátor hiba", "megoldas": "DC motor feszültség ellenőrzés (310V/15V)." },
+          "OP_6_TIMER_3": { "hiba": "Inverter/IPM hiba", "megoldas": "Kompresszor fázis zárlat vagy modul hiba." },
+          "OP_6_TIMER_10": { "hiba": "Alaplapi mikroprocesszor hiba", "megoldas": "Panelcsere szükséges." },
+          "OP_7_TIMER_1": { "hiba": "Kültéri beszívott levegő szenzor", "megoldas": "Kültéri panel CN korong, 10k Ohm @ 25°C." },
+          "OP_7_TIMER_2": { "hiba": "Kültéri hőcserélő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_7_TIMER_3": { "hiba": "Nyomócső (Discharge) szenzor", "megoldas": "50k Ohm @ 25°C. Magas hőfoknál az ellenállás drasztikusan esik." },
+          "OP_8_TIMER_4": { "hiba": "Négyutú szelep hiba", "megoldas": "Fűtés/Hűtés váltás hiba, hűtőközeg áramlási irány hiba." },
+          "OP_9_TIMER_7": { "hiba": "Kompresszor pozíció érzékelési hiba", "megoldas": "Indítási hiba, kompresszor megszorulhatott." },
+          "OP_10_TIMER_1": { "hiba": "Nyomócső túlhevülés", "megoldas": "Gázhiány vagy extrém terhelés miatti tiltás." },
+          "OP_10_TIMER_3": { "hiba": "Folyadékcső hőmérséklet hiba", "megoldas": "Kültéri hőcserélő kilépő pontján mért hiba." },
+          "OP_10_TIMER_5": { "hiba": "Alacsony nyomás hiba", "megoldas": "Gázhiány vagy dugulás a rendszerben." }
+        },
+        "szenzor_ertekek": {
+          "10k_szenzor": "0°C: 33.6k | 10°C: 20.2k | 25°C: 10k | 50°C: 3.6k",
+          "50k_szenzor": "20°C: 61.2k | 50°C: 17.6k | 80°C: 6.1k | 100°C: 3.6k"
+        }
+      }
+    }
+  },
+  "fujitsu_standard_km_airstage": {
+    "leiras": "Northwind Fujitsu Standard KM (AIRSTAGE) Adatbázis",
+    "utolso_frissites": "2026-05-05",
+    "geptipusok": {
+      "ASEH07KMCG": {
+        "szin": "Fehér / Fekete (-B)",
+        "adatok": {
+          "teljesitmeny_hutes_futes_kw": "2.0 (0.9-3.0) / 2.5 (0.9-3.4)",
+          "energiaosztaly": "A++ / A++",
+          "seer_scop": "8.40 / 4.60",
+          "hutokozeg_tipus": "R32",
+          "halozati_aram": "230V / 1 / 50Hz",
+          "tomeg_belteri_kulteri_kg": "10 / 22",
+          "cso_meret_folyadek_gaz_mm": "6.35 / 9.52",
+          "max_csohossz_osszes_m": "20 (15m felett rátöltés)",
+          "max_szintkulonbseg_m": "15",
+          "uzemeltetesi_hatar_hutes_futes_C": "-10~50 / -15~24",
+          "zajszint_belteri_hutes_dbA": "20/29/33/38 (csend./min./köz./max.)",
+          "zajszint_belteri_futes_dbA": "22/31/35/41 (csend./min./köz./max.)",
+          "zajszint_kulteri_hutes_futes_dbA": "46 / 46",
+          "hangteljesitmeny_belteri_dbA": "54 / 56",
+          "hangteljesitmeny_kulteri_dbA": "61 / 61",
+          "meret_belteri_sz_m_m_mm": "834 x 270 x 222",
+          "meret_kulteri_sz_m_m_mm": "663 x 541 x 290",
+          "kulteri_talpmeret_mm": "580 x 330",
+          "eves_fogyasztas_hutes_futes_kwh": "83 / 700",
+          "eves_koltseg_hutes_futes_ft": "3.117 / 26.285"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "600 (15 méterig)",
+          "ratoltes_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "700"
+        },
+        "kezelesi_utmutato": "manuals/Kezelési útmutató magyar ASEH07-14KMCG.pdf"
+      },
+      "ASEG18KMTE": {
+        "adatok": {
+          "teljesitmeny_hutes_futes_kw": "5.2 (0.9-6.0) / 6.3 (0.9-8.7)",
+          "seer_scop": "7.77 / 4.60",
+          "javasolt_biztositek": "C16A",
+          "tomeg_belteri_kulteri_kg": "12.5 / 36",
+          "cso_meret_folyadek_gaz_mm": "6.35 / 12.70",
+          "max_csohossz_osszes_m": "25",
+          "max_szintkulonbseg_m": "20",
+          "zajszint_belteri_hutes_dbA": "29 / 35 / 40 / 45",
+          "meret_belteri_mm": "980 x 280 x 240",
+          "meret_kulteri_mm": "799 x 632 x 290",
+          "eves_koltseg_hutes_futes_ft": "8.787 / 54.823"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "1020 (15 méterig)",
+          "ratoltes_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "1220"
+        },
+        "kezelesi_utmutato": "manuals/Kezelési útmutató magyar_ASEG18-24KMTE.pdf"
+      },
+      "ASYG30KMTA": {
+        "megnevezes": "Standard KM szerverklíma funkcióval",
+        "adatok": {
+          "teljesitmeny_hutes_futes_kw": "8.0 (2.9-9.0) / 8.8 (2.2-11.0)",
+          "seer_scop": "6.67 / 4.54",
+          "javasolt_biztositek": "C16A",
+          "tomeg_belteri_kulteri_kg": "18.5 / 52",
+          "cso_meret_folyadek_gaz_mm": "9.52 / 15.88",
+          "max_csohossz_osszes_m": "50 (30m felett rátöltés)",
+          "max_szintkulonbseg_m": "30",
+          "meret_belteri_mm": "1150 x 280 x 340",
+          "meret_kulteri_mm": "940 x 788 x 320",
+          "eves_koltseg_hutes_futes_ft": "15.733 / 75.138"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "1700 (30 méterig)",
+          "ratoltes_30m_felett_g_per_m": "40",
+          "maximalis_gaztoltet_g": "2500"
+        }
+      }
+    },
+    "diagnosztikai_logikak": {
+      "standard_km_airstage_logic": {
+        "hibakodok": {
+          "OP_2_TIMER_0": { "hiba": "Beltéri-Kültéri kommunikáció", "megoldas": "Mérj 0-50V DC-t a 2-3 sorkapcson." },
+          "OP_2_TIMER_1": { "hiba": "Vezetékes távirányító kommunikáció", "megoldas": "Csak ha van fali kezelő." },
+          "OP_3_TIMER_2": { "hiba": "Beltéri hőcserélő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_3_TIMER_5": { "hiba": "Beltéri beszívott levegő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_7_TIMER_1": { "hiba": "Kültéri levegő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_7_TIMER_2": { "hiba": "Kültéri hőcserélő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_7_TIMER_3": { "hiba": "Kültéri nyomócső (Discharge) szenzor", "megoldas": "50k Ohm @ 25°C!" },
+          "OP_7_TIMER_4": { "hiba": "Kültéri folyadékcső szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_6_TIMER_2": { "hiba": "Kültéri ventilátor hiba", "megoldas": "DC motor (310V/15V)." },
+          "OP_9_TIMER_4": { "hiba": "EEV (Expanziós szelep) hiba", "megoldas": "Tekercs ellenállás: ~46 Ohm áganként." },
+          "OP_8_TIMER_4": { "hiba": "Négyutú szelep váltási hiba", "megoldas": "Áramlási irány hiba." },
+          "OP_6_TIMER_3": { "hiba": "Inverter fázis hiba", "megoldas": "Kompresszor fáziskiesés vagy zárlat." },
+          "OP_6_TIMER_4": { "hiba": "Aktív szűrő (PFC) hiba", "megoldas": "KM-specifikus! Panel hiba, nem tudja emelni a DC feszültséget." },
+          "OP_6_TIMER_10": { "hiba": "Kommunikációs hiba az alaplapi chipek között", "megoldas": "Belső panel hiba." },
+          "OP_9_TIMER_5": { "hiba": "Kompresszor indítási hiba", "megoldas": "Pozíció hiba, megszorult vagy fázishiányos motor." },
+          "OP_9_TIMER_7": { "hiba": "Kompresszor túláram", "megoldas": "Mechanikai szorulás vagy hűtőközeg torlódás." },
+          "OP_10_TIMER_1": { "hiba": "Nyomócső túlhevülés", "megoldas": "Discharge hőfok 110°C felett (Gázhiány!)." },
+          "OP_10_TIMER_3": { "hiba": "Kültéri modul túlmelegedés", "megoldas": "Hűtőborda nem hűl megfelelően." },
+          "OP_10_TIMER_5": { "hiba": "Alacsony nyomás hiba", "megoldas": "KM-ben már figyelt érték, gázhiány vagy dugulás." }
+        }
+      }
+    }
+  },
+  "fujitsu_eco_kn": {
+    "leiras": "Northwind Fujitsu Mérnöki Adatbázis - ECO KN Sorozat MASTER",
+    "utolso_frissites": "2026-05-05",
+    "geptipusok": {
+      "ASEH07KNCA": {
+        "muszaki_adatok": {
+          "megnevezes": "oldalfali splitklíma berendezés, beépített wifivel",
+          "teljesitmeny_hutes_kw": "2.0 (0.9-2.9)",
+          "teljesitmeny_futes_kw": "2.5 (0.9-3.4)",
+          "energiaosztaly": "A++ / A+",
+          "seer_scop": "7.8 / 4.4",
+          "hutokozeg_tipus": "R32",
+          "halozati_aram": "230V / 1 / 50Hz",
+          "tomeg_belteri_kulteri_kg": "9 / 22",
+          "cso_meret_folyadek_gaz_mm": "6.35 / 9.52",
+          "max_csohossz_osszes_m": "20 (15m felett rátöltés)",
+          "max_szintkulonbseg_m": "15",
+          "uzemeltetesi_hatar_kulso_hutes_C": "-10 ~ 50",
+          "uzemeltetesi_hatar_kulso_futes_C": "-15 ~ 24",
+          "uzemeltetesi_hatar_belso_hutes_C": "18 ~ 32",
+          "uzemeltetesi_hatar_belso_futes_C": "16 ~ 30",
+          "zajszint_belteri_hutes_dbA": "20 / 29 / 33 / 36 (csend./min./köz./max.)",
+          "zajszint_belteri_futes_dbA": "22 / 30 / 33 / 38 (csend./min./köz./max.)",
+          "zajszint_kulteri_hutes_futes_dbA": "43 / 44",
+          "hangteljesitmeny_belteri_dbA": "51 / 52",
+          "hangteljesitmeny_kulteri_dbA": "53 / 54",
+          "meret_belteri_sz_m_m_mm": "784 x 270 x 222",
+          "meret_kulteri_sz_m_m_mm": "663 x 541 x 290",
+          "kulteri_talpmeret_mm": "450 x 330",
+          "eves_fogyasztas_hutes_futes_kwh": "90 / 731",
+          "eves_koltseg_hutes_futes_ft": "3.380 / 27.449"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "550 (15 méterig)",
+          "ratoltes_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "650",
+          "maximalis_csohossz_m": "20",
+          "minimalis_csohossz_m": "3"
+        },
+        "kezelesi_utmutato": "manuals/Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      },
+      "ASEH09KNCA": {
+        "muszaki_adatok": {
+          "teljesitmeny_hutes_kw": "2.5 (0.9-3.1)",
+          "teljesitmeny_futes_kw": "2.8 (0.9-4.0)",
+          "seer_scop": "7.4 / 4.4",
+          "zajszint_belteri_hutes_dbA": "20 / 29 / 35 / 38",
+          "hangteljesitmeny_belteri_kulteri_dbA": "53-52 / 56-56",
+          "eves_fogyasztas_hutes_futes_kwh": "118 / 763",
+          "eves_koltseg_hutes_futes_ft": "4.431 / 28.651"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "550 (15 méterig)",
+          "ratoltes_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "650"
+        },
+        "kezelesi_utmutato": "manuals/Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      },
+      "ASEH12KNCA": {
+        "muszaki_adatok": {
+          "teljesitmeny_hutes_kw": "3.4 (0.9-3.8)",
+          "teljesitmeny_futes_kw": "3.8 (0.9-4.8)",
+          "seer_scop": "7.0 / 4.4",
+          "tomeg_kulteri_kg": "24",
+          "zajszint_belteri_hutes_dbA": "20 / 32 / 36 / 40",
+          "zajszint_belteri_futes_dbA": "22 / 31 / 35 / 39",
+          "zajszint_kulteri_hutes_futes_dbA": "49 / 49",
+          "eves_fogyasztas_hutes_futes_kwh": "170 / 795",
+          "eves_koltseg_hutes_futes_ft": "6.384 / 29.852"
+        },
+        "telepitesi_es_gaz_adatok": {
+          "gyari_toltet_g": "630 (15 méterig)",
+          "ratoltes_15m_felett_g_per_m": "20",
+          "maximalis_gaztoltet_g": "730"
+        },
+        "kezelesi_utmutato": "manuals/Kezelési útmutató magyar ASEH07-12KNCA-AOEH07-12KNCA.pdf",
+        "diagnosztika": "fujitsu_kn_global_logic"
+      }
+    },
+    "diagnosztikai_logikak": {
+      "fujitsu_kn_global_logic_eco": {
+        "hibakodok": {
+          "OP_2_TIMER_0": { "hiba": "Beltéri-Kültéri kommunikáció", "megoldas": "0-50V DC ugráló feszültség a 2-3 kapcson." },
+          "OP_3_TIMER_2": { "hiba": "Beltéri hőcserélő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_3_TIMER_5": { "hiba": "Beltéri beszívott levegő szenzor", "megoldas": "10k Ohm @ 25°C." },
+          "OP_6_TIMER_2": { "hiba": "Kültéri ventilátor hiba", "megoldas": "DC motor (310V/15V)." },
+          "OP_7_TIMER_3": { "hiba": "Nyomócső (Discharge) szenzor", "megoldas": "50k Ohm @ 25°C." },
+          "OP_10_TIMER_1": { "hiba": "Nyomócső túlhevülés", "megoldas": "Gázhiány vagy extrém terhelés." },
+          "OP_10_TIMER_5": { "hiba": "Alacsony nyomás hiba", "megoldas": "Gázhiány / dugulás." }
+        }
+      }
+    }
+  }
+}

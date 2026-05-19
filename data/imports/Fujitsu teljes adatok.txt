@@ -1,0 +1,312 @@
+ECO KN sorozat ASEH07KNCA/AOEH07KNCA
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  2 (0.9-2.9)Fűtőteljesítmény (kW)  2.5 (0.9-3.4)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.8SCOP  4.4
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 9/22CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/29/33/36Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/30/33/38Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  43/44Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  51/52Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  53/54Méret (mm)Beltéri (Szél.xMag.xMély.) 784x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 450x330Éves energiafogyasztásHűtés (kWh/év)  90Fűtés (kWh/év)  731Várható éves hűtési költség  3.380 FtVárható éves fűtési költség  27.449 Ft
+
+
+ECO KN sorozat ASEH09KNCA/AOEH09KNCA
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  2.5 (0.9-3.1)Fűtőteljesítmény (kW)  2.8 (0.9-4.0)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.4SCOP  4.4
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 9/22CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/29/35/38Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/30/33/38Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  44/45Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  53/52Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  56/56Méret (mm)Beltéri (Szél.xMag.xMély.) 784x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 450x330Éves energiafogyasztásHűtés (kWh/év)  118Fűtés (kWh/év)  763Várható éves hűtési költség  4.431 FtVárható éves fűtési költség  28.651 Ft
+
+
+ECO KN sorozat ASEH12KNCA/AOEH12KNCA
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  3.4 (0.9-3.8)Fűtőteljesítmény (kW)  3.8 (0.9-4.8)Hűtési energiaosztály A++
+SEER  7.0SCOP  4.4
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 9/24CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/32/36/40Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/31/35/39Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  49/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  55/53Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  60/61Méret (mm)Beltéri (Szél.xMag.xMély.) 784x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 450x330Éves energiafogyasztásHűtés (kWh/év)  170Fűtés (kWh/év)  795Várható éves hűtési költség  6.384 FtVárható éves fűtési költség  29.852 Ft
+
+
+ECO KL sorozat AIRSTAGE ASEH07KLTA/AOEH07KLTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  2.0 (0.9-2.8)Fűtőteljesítmény (kW)  2.4 (0.9-3.3)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.10SCOP  4.10
+Hűtőközeg típusa  R32EER  3.70COP  3.75Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C10ATömeg (beltéri/kültéri) (kg) 7/19CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 52Külső hőm. Fűtés (°C) -15 ~24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint dB(A) (csend./min./köz./max.)  21/29/36/41Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  47/47Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  54/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  56/57Méret (mm)Beltéri (Szél.xMag.xMély.) 770x250x218Kültéri (Szél.xMag.xMély.) 663x541x290Éves energiafogyasztásHűtés (kWh/év)  99Fűtés (kWh/év)  752Várható éves hűtési költség  3.717 FtVárható éves fűtési költség  28.238 Ft
+
+
+ECO KL sorozat AIRSTAGE ASEH09KLTA/AOEH09KLTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  2.5 (0.9-3.0)Fűtőteljesítmény (kW)  2.5 (0.9-3.5)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.80SCOP  4.10
+Hűtőközeg típusa  R32EER  3.29COP  3.73Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C10ATömeg (beltéri/kültéri) (kg) 7/19CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 52Külső hőm. Fűtés (°C) -15 ~24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint dB(A) (csend./min./köz./max.)  21/29/36/43Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  47/47Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  55/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  58/57Méret (mm)Beltéri (Szél.xMag.xMély.) 770x250x218Kültéri (Szél.xMag.xMély.) 663x541x290Éves energiafogyasztásHűtés (kWh/év)  129Fűtés (kWh/év)  786Várható éves hűtési költség  4.844 FtVárható éves fűtési költség  29.514 Ft
+
+
+
+ECO KL sorozat AIRSTAGE ASEH12KLTA/AOEH12KLTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  3.4 (0.9-3.7)Fűtőteljesítmény (kW)  3.4 (0.9-3.7)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.70SCOP  4.10
+Hűtőközeg típusa  R32EER  3.24COP  3.72Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C10ATömeg (beltéri/kültéri) (kg) 7.5/22CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 52Külső hőm. Fűtés (°C) -15 ~24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint dB(A) (csend./min./köz./max.)  21/30/37/43Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  50/50Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  55/56Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  60/61Méret (mm)Beltéri (Szél.xMag.xMély.) 770x250x218Kültéri (Szél.xMag.xMély.) 663x541x290Éves energiafogyasztásHűtés (kWh/év)  178Fűtés (kWh/év)  854Várható éves hűtési költség  6.684 FtVárható éves fűtési költség  32.068 Ft
+
+
+
+ECO KL sorozat AIRSTAGE ASEG18KLCA / AOEG18KLCA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  5.2 (0.9-5.5)Fűtőteljesítmény (kW)  6.3 (0.6-7.6)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.20SCOP  4.30
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C20ATömeg (beltéri/kültéri) (kg) 9.5/33CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 20Max. össz. csőhossz (m) 25Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  35/40/44/47Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  37/41/45/50Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  50/56Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  60/65Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  61/66Méret (mm)Beltéri (Szél.xMag.xMély.) 790x293x249Kültéri (Szél.xMag.xMély.) 799x542x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  253Fűtés (kWh/év)  1563Várható éves hűtési költség  9.500 FtVárható éves fűtési költség  58.691 Ft
+
+
+ECO KL sorozat AIRSTAGE ASEG24KLCA/AOEG24KLCA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  7.1 (0.9-7.7)Fűtőteljesítmény (kW)  8.0 (0.9-9.0)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.10SCOP  4.00
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C20ATömeg (beltéri/kültéri) (kg) 10/38CsövezésCsőméret (mm) 6.35/12.70Max. szintkülönbség (m) 25Max. össz. csőhossz (m) 30Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  33/38/45/51Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  37/41/45/52Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  64/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  55/57Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/67Méret (mm)Beltéri (Szél.xMag.xMély.) 790x293x249Kültéri (Szél.xMag.xMély.) 799x632x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  350Fűtés (kWh/év)  2485Várható éves hűtési költség  13.143 FtVárható éves fűtési költség  93.312 Ft
+
+
+Standard KM sorozat AIRSTAGE ASEH07KMCG/AOEH07KMCG
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  2.0 (0.9-3.0)Fűtőteljesítmény (kW)  2.5 (0.9-3.4)Hűtési energiaosztály A++Fűtési energiaosztály A++
+SEER  8.40SCOP  4.60
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 10/22CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/29/33/38Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/31/35/41Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  46/46Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  54/56Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  61/61Méret (mm)Beltéri (Szél.xMag.xMély.) 834x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  83Fűtés (kWh/év)  700Várható éves hűtési költség  3.117 FtVárható éves fűtési költség  26.285 Ft
+
+Standard KM sorozat AIRSTAGE ASEH07KMCG-B/AOEH07KMCG
+oldalfali splitklíma berendezés, beépített wifivel(Itt csak meg kell jegyezni, hogy van fekete szinben, a többi adat ugyanaz)
+
+
+Standard KM sorozat AIRSTAGE ASEH09KMCG/AOEH09KMCG
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  2.5 (0.9-3.2)Fűtőteljesítmény (kW)  2.8 (0.9-4.0)Hűtési energiaosztály A++Fűtési energiaosztály A++
+SEER  8.40SCOP  4.60
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 10/22CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/29/34/40Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/31/36/42Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  46/46Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  55/57Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  61/62Méret (mm)Beltéri (Szél.xMag.xMély.) 834x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  104Fűtés (kWh/év)  730Várható éves hűtési költség  3.905 FtVárható éves fűtési költség  27.412 Ft
+
+Standard KM sorozat AIRSTAGE ASEH09KMCG-B/AOEH09KMCG
+oldalfali splitklíma berendezés, beépített wifivel (Itt csak meg kell jegyezni, hogy van fekete szinben, a többi adat ugyanaz)
+
+
+Standard KM sorozat AIRSTAGE ASEH12KMCG/AOEH12KMCG
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  3.4 (0.9-3.9)Fűtőteljesítmény (kW)  4.0 (0.9-5.3)Hűtési energiaosztály A++Fűtési energiaosztály A++
+SEER  7.70SCOP  4.60
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 10/24CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/30/35/40Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  22/33/38/42Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  50/50Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  55/58Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Méret (mm)Beltéri (Szél.xMag.xMély.) 834x270x222Kültéri (Szél.xMag.xMély.) 663x541x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  155Fűtés (kWh/év)  761Várható éves hűtési költség  5.820 FtVárható éves fűtési költség  28.576 Ft
+
+Standard KM sorozat AIRSTAGE ASEH12KMCG-B/AOEH12KMCG
+oldalfali splitklíma berendezés, beépített wifivel (Itt csak meg kell jegyezni, hogy van fekete szinben, a többi adat ugyanaz)
+
+
+
+Standard KM sorozat AIRSTAGE ASEH14KMCG/AOEH14KMCG
+oldalfali splitklíma berendezés, beépített wifivel
+Hűtőteljesítmény (kW)  4.2 (0.9-4.4)Fűtőteljesítmény (kW)  5.4 (0.9-6.0)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  7.10SCOP  4.10
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Tömeg (beltéri/kültéri) (kg) 10/31CsövezésCsőméret (mm) 6.35/9.52Max. szintkülönbség (m) 15Max. össz. csőhossz (m) 20 (15)Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 50Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  20/30/36/43Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  24/33/39/44Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  50/50Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  57/59Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/66Méret (mm)Beltéri (Szél.xMag.xMély.) 834x270x222Kültéri (Szél.xMag.xMély.) 799x542x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  207Fűtés (kWh/év)  1366Várható éves hűtési költség  7.773 FtVárható éves fűtési költség  51.293 Ft
+
+Standard KM sorozat AIRSTAGE ASEH14KMCG-B/AOEH14KMCG
+oldalfali splitklíma berendezés, beépített wifivel (Itt csak meg kell jegyezni, hogy van fekete szinben, a többi adat ugyanaz)
+
+
+Standard KM sorozat AIRSTAGE ASEG18KMTE/AOEG18KMTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  5.2 (0.9-6.0)Fűtőteljesítmény (kW)  6.3 (0.9-8.7)Hűtési energiaosztály A++Fűtési energiaosztály A++
+SEER  7.77SCOP  4.60
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 12.5/36CsövezésCsőméret (mm) 6.35/12.70Max. szintkülönbség (m) 20Max. össz. csőhossz (m) 25Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  29/35/40/45Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  29/35/40/46Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  60/61Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  50/50Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Méret (mm)Beltéri (Szél.xMag.xMély.) 980x280x240Kültéri (Szél.xMag.xMély.) 799x632x290Kültéri talpméret (mm) 580x330Éves energiafogyasztásHűtés (kWh/év)  234Fűtés (kWh/év)  1460Várható éves hűtési költség  8.787 FtVárható éves fűtési költség  54.823 Ft
+
+
+
+Standard KM sorozat AIRSTAGE ASEG24KMTE/AOEG24KMTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  7.1(0.9-8.3)Fűtőteljesítmény (kW)  8.0 (0.9-10.1)Hűtési energiaosztály A++Fűtési energiaosztály A+
+EER  7.30SCOP  4.20
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 12.5/42CsövezésCsőméret (mm) 6.35/12.70Max. szintkülönbség (m) 25Max. össz. csőhossz (m) 30Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -10 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  29/35/40/49Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  29/35/40/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  54/52Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  67/66Méret (mm)Beltéri (Szél.xMag.xMély.) 980x280x240Kültéri (Szél.xMag.xMély.) 820x716x315Kültéri talpméret (mm) 600x330Éves energiafogyasztásHűtés (kWh/év)  340Fűtés (kWh/év)  2362Várható éves hűtési költség  12.767 FtVárható éves fűtési költség  88.693 Ft
+
+
+Standard KM sorozat ASYG30KMTA / AOYG30KMTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  8.0 (2.9-9.0)Fűtőteljesítmény (kW)  8.8 (2.2-11.0)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.67SCOP  4.54
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 18.5/52CsövezésCsőméret (mm) 9.52/15.88Max. szintkülönbség (m) 30Max. össz. csőhossz (m) 50Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -15 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  33/40/44/50Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  33/39/44/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  53/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  68/69Méret (mm)Beltéri (Szél.xMag.xMély.) 1150x280x340Kültéri (Szél.xMag.xMély.) 940x788x320Kültéri talpméret (mm) 650x354.8Éves energiafogyasztásHűtés (kWh/év)  419Fűtés (kWh/év)  2001Várható éves hűtési költség  15.733 FtVárható éves fűtési költség  75.138 Ft
+
+
+Standard KM sorozat AIRSTAGE ASEH36KMTB/AOEH36KMTB
+oldalfali splitklíma berendezés, szerverklíma funkcióval
+Hűtőteljesítmény (kW)  9.4 (2.9-10.0)Fűtőteljesítmény (kW)  10.1 (2.7-12.6)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.10SCOP  4.50
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 18.5/52CsövezésCsőméret (mm) 9.52/15.88Max. szintkülönbség (m) 30Max. össz. csőhossz (m) 50Bivalens hőmérséklet (°C)Külső hőm. Hűtés (°C) -15 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  33/40/44/50Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  33/39/44/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  55/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  70/70Méret (mm)Beltéri (Szél.xMag.xMély.) 1150x280x340Kültéri (Szél.xMag.xMély.) 940x788x320Kültéri talpméret (mm) 650x354.8Éves energiafogyasztásHűtés (kWh/év)  534Fűtés (kWh/év)  2189Várható éves hűtési költség  20.052 FtVárható éves fűtési költség  82.197 Ft
+
+
+
+Standard KM sorozat AIRSTAGE ASEH30KMTB/AOEH30KMTB
+oldalfali splitklíma berendezés, szerverklíma funkcióval
+Hűtőteljesítmény (kW)  8.0 (2.9-9.0)Fűtőteljesítmény (kW)  8.8 (2.2-11.8)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.68SCOP  4.50
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 18.5/52CsövezésCsőméret (mm) 9.52/15.88Max. szintkülönbség (m) 30Max. össz. csőhossz (m) 50Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -15 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  33/40/44/50Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  33/39/44/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  53/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  68/69Méret (mm)Beltéri (Szél.xMag.xMély.) 1150x280x340Kültéri (Szél.xMag.xMély.) 940x788x320Kültéri talpméret (mm) 650x354.8Éves energiafogyasztásHűtés (kWh/év)  419Fűtés (kWh/év)  1994Várható éves hűtési költség  15.733 FtVárható éves fűtési költség  74.875 Ft
+
+
+Standard KM sorozat ASYG36KMTA / AOYG36KMTA
+oldalfali splitklíma berendezés
+Hűtőteljesítmény (kW)  9.4 (2.9-10.0)Fűtőteljesítmény (kW)  10.1 (2.7-11.2)Hűtési energiaosztály A++Fűtési energiaosztály A+
+SEER  6.14SCOP  4.52
+Hűtőközeg típusa  R32Hálózati áram (V/f/Hz)  230/1/50Javasolt biztosíték (A) C16ATömeg (beltéri/kültéri) (kg) 18.5/52CsövezésCsőméret (mm) 9.52/15.88Max. szintkülönbség (m) 30Max. össz. csőhossz (m) 50Üzemeltetési határok (°C)Külső hőm. Hűtés (°C) -15 ~ 46Külső hőm. Fűtés (°C) -15 ~ 24Belső hőm. Hűtés (°C) 18 ~ 32Belső hőm. Fűtés (°C) 16 ~ 30Zajszint (db(A))Beltéri hangnyomásszint - Hűtés (csend./min./köz./max.)  33/40/44/50Beltéri hangnyomásszint - Fűtés (csend./min./köz./max.)  33/39/44/49Beltéri hangteljesítményszint (hűtés/fűtés) dB(A)  65/65Kültéri hangnyomásszint (hűtés/fűtés) dB(A)  53/55Kültéri hangteljesítményszint (hűtés/fűtés) dB(A)  70/70Méret (mm)Beltéri (Szél.xMag.xMély.) 1150x280x340Kültéri (Szél.xMag.xMély.) 940x788x320Kültéri talpméret (mm) 650x354.8Éves energiafogyasztásHűtés (kWh/év)  535Fűtés (kWh/év)  2198Várható éves hűtési költség  20.089 FtVárható éves fűtési költség  82.535 Ft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

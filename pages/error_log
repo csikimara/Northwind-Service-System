@@ -1,0 +1,115 @@
+[16-May-2026 21:51:49 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:52:35 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 21:52:43 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:52:51 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:52:55 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:54:54 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 21:55:34 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:55:40 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:55:40 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:55:41 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:56:26 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:58:08 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 21:58:15 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 21:58:44 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:59:07 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:02:26 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:02:29 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:06:53 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:06:57 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:00 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:00 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:06 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:07 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:08 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:08 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:08 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:09 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:09 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:07:09 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:09:32 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:09:37 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/pages/ugyfelek.php on line 6
+Stack trace:
+#0 {main}
+[16-May-2026 22:19:58 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 22:34:23 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[17-May-2026 00:57:48 Europe/Budapest] PHP Warning:  Undefined variable $recentCustomers in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 00:57:48 Europe/Budapest] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php:169
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 06:22:08 Europe/Budapest] PHP Warning:  Undefined variable $recentCustomers in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 06:22:08 Europe/Budapest] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php:169
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 14:18:22 Europe/Budapest] PHP Warning:  Undefined variable $recentCustomers in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 14:18:22 Europe/Budapest] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php:169
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 169
+[17-May-2026 19:22:14 Europe/Budapest] PHP Warning:  Undefined variable $totalTelepites in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 114
+[17-May-2026 19:22:14 Europe/Budapest] PHP Warning:  Undefined variable $totalCso in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 118
+[17-May-2026 19:22:14 Europe/Budapest] PHP Warning:  Undefined variable $workCounts in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 123
+[17-May-2026 19:22:14 Europe/Budapest] PHP Fatal error:  Uncaught TypeError: array_sum(): Argument #1 ($array) must be of type array, null given in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php:123
+Stack trace:
+#0 /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php(123): array_sum()
+#1 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 123
+[17-May-2026 19:23:07 Europe/Budapest] PHP Warning:  Undefined variable $totalTelepites in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 114
+[17-May-2026 19:23:07 Europe/Budapest] PHP Warning:  Undefined variable $totalCso in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 118
+[17-May-2026 19:23:07 Europe/Budapest] PHP Warning:  Undefined variable $workCounts in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 123
+[17-May-2026 19:23:07 Europe/Budapest] PHP Fatal error:  Uncaught TypeError: array_sum(): Argument #1 ($array) must be of type array, null given in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php:123
+Stack trace:
+#0 /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php(123): array_sum()
+#1 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/pages/statisztika.php on line 123
+[18-May-2026 21:59:58 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[18-May-2026 22:02:33 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[18-May-2026 22:02:49 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[18-May-2026 22:02:51 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[18-May-2026 22:02:51 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[18-May-2026 22:02:51 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[19-May-2026 07:41:36 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[19-May-2026 07:42:18 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
+[19-May-2026 08:26:15 Europe/Budapest] PHP Deprecated:  Constant E_STRICT is deprecated since 8.4, the error level was removed in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 64
