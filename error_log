@@ -1,0 +1,60 @@
+[16-May-2026 21:51:47 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:52:10 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:54:50 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:56:25 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:58:06 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[16-May-2026 21:59:05 Europe/Budapest] PHP Warning:  Constant BASE_URL already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 31
+[17-May-2026 19:07:20 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:20 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:22 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:22 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:24 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:24 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:26 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:26 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:40 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:07:40 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:08:17 Europe/Budapest] PHP Warning:  require_once(/home/northwin/public_html/sandbox.northwind.hu/../config.php): Failed to open stream: No such file or directory in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[17-May-2026 19:08:17 Europe/Budapest] PHP Fatal error:  Uncaught Error: Failed opening required '/home/northwin/public_html/sandbox.northwind.hu/../config.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/northwin/public_html/sandbox.northwind.hu/munkanaplo.php on line 4
+[18-May-2026 21:05:07 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:05:45 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:05:58 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:06:29 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:06:55 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:07:24 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 5
+Stack trace:
+#0 {main}
+[18-May-2026 21:16:29 Europe/Budapest] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 4
+Stack trace:
+#0 {main}
+[20-May-2026 18:13:31 Europe/Budapest] PHP Warning:  Constant NAS_BASE_PATH already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 30
+[20-May-2026 18:17:16 Europe/Budapest] PHP Warning:  Constant NAS_BASE_PATH already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 30
+[20-May-2026 18:17:51 Europe/Budapest] PHP Warning:  Constant NAS_BASE_PATH already defined, this will be an error in PHP 9 in /home/northwin/public_html/sandbox.northwind.hu/config.php on line 30

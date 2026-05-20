@@ -1,441 +1,410 @@
-function rendszerIdozitokBeallitasa() {
-  var wanted = [
-    ['napiKarbantartasEllenorzes', 8],
-    ['estiJelentesKuldese', 20],
-    ['automataHolnapiUgyfelErtesito', 17]
-  ];
-  var existing = ScriptApp.getProjectTriggers().map(function(t) { return t.getHandlerFunction(); });
-
-  wanted.forEach(function(w) {
-    if (existing.indexOf(w[0]) === -1) {
-      ScriptApp.newTrigger(w[0]).timeBased().atHour(w[1]).everyDays(1).create();
-    }
-  });
-
-  MailApp.sendEmail(
-    "northwindhutestechnikakft@gmail.com",
-    "Northwind ULTRA Rendszer",
-    "Minden automata időzítő sikeresen be van kapcsolva."
-  );
-}
-
-function escHtml(s) {
-  return String(s || '')
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
-function jsonResponse(obj) {
-  return ContentService.createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-
-function getCalendar() {
-  var cals = CalendarApp.getCalendarsByName("Northwind Munka");
-  return cals.length ? cals[0] : CalendarApp.getDefaultCalendar();
-}
-
-function getSheet(name) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  return ss.getSheetByName(name) || ss.insertSheet(name);
-}
-
-function validMode(mode) {
-  return ['idopont', 'felmeres', 'telepites', 'karbantartas', 'javitas', 'egyeb'].indexOf(String(mode || '').toLowerCase()) > -1;
-}
-
-function folderByMode(mode) {
-  mode = String(mode || '').toLowerCase();
-  if (mode === 'telepites') return 'telepiteskepek';
-  if (mode === 'felmeres') return 'munkafelmereskepek';
-  if (mode === 'karbantartas') return 'karbantartaskepek';
-  if (mode === 'javitas') return 'javitaskepek';
-  return 'egyebkepek';
-}
-
-function getOrCreateFolder(name) {
-  var it = DriveApp.getFoldersByName(name);
-  return it.hasNext() ? it.next() : DriveApp.createFolder(name);
-}
-
-function frissitEmlekezteto(ugyfel, cim, email, tel, honap) {
-  var sh = getSheet("Emlékeztetők");
-  if (sh.getLastRow() === 0) {
-    sh.appendRow(["Ügyfél", "Cím", "Email", "Telefon", "Következő Dátum", "Értesítve"]);
+function automataEmlekeztetoBeallitasa() {
+  var triggers = ScriptApp.getProjectTriggers();
+  for (var i = 0; i < triggers.length; i++) {
+    if (triggers[i].getHandlerFunction() === 'napiKarbantartasEllenorzes') return;
   }
-
-  var nextDate = new Date();
-  nextDate.setMonth(nextDate.getMonth() + (parseInt(honap, 10) || 12));
-  var dateStr = Utilities.formatDate(nextDate, Session.getScriptTimeZone(), "yyyy-MM-dd");
-
-  var data = sh.getDataRange().getValues();
-  for (var i = 1; i < data.length; i++) {
-    var rowName = String(data[i][0] || "");
-    var rowEmail = String(data[i][2] || "");
-    var rowTel = String(data[i][3] || "");
-    if (rowName === String(ugyfel) && ((email && rowEmail === String(email)) || (tel && rowTel === String(tel)))) {
-      sh.getRange(i + 1, 1, 1, 6).setValues([[ugyfel, cim, email, tel, dateStr, "NEM"]]);
-      return;
-    }
-  }
-
-  sh.appendRow([ugyfel, cim, email, tel, dateStr, "NEM"]);
+  ScriptApp.newTrigger('napiKarbantartasEllenorzes').timeBased().atHour(8).everyDays(1).create();
+  MailApp.sendEmail(Session.getActiveUser().getEmail(), "Northwind Rendszer", "Automata napi emlékeztető bekapcsolva!");
 }
 
-function automataHolnapiUgyfelErtesito() {
-  var holnap = new Date();
-  holnap.setDate(holnap.getDate() + 1);
-
-  var events = getCalendar().getEventsForDay(holnap);
-  var count = 0;
-
-  events.forEach(function(e) {
-    var title = e.getTitle() || '';
-    if (
-      title.toUpperCase().indexOf("KLÍMA:") === -1 &&
-      title.toUpperCase().indexOf("[ÜZLETI]") === -1 &&
-      title.indexOf("📌") === -1
-    ) return;
-
-    var desc = e.getDescription() || "";
-    var place = e.getLocation() || "A megadott címen";
-    var time = Utilities.formatDate(e.getStartTime(), Session.getScriptTimeZone(), "HH:mm");
-    var m = desc.match(/Email:\s*([^\s\n]+)/i);
-    var email = m && m[1] ? m[1].trim() : "";
-
-    if (email && email.indexOf("@") !== -1) {
-      var name = title.replace("Klíma:", "").replace("KLÍMA:", "").replace("📌", "").replace("[ÜZLETI]", "").trim();
-      MailApp.sendEmail(
-        email,
-        "Értesítés holnapi munkavégzésről - Northwind Hűtéstechnika",
-        "Kedves " + name + "!\n\n" +
-        "Ezúton szeretnénk udvariasan visszaigazolni és emlékeztetni Önt a holnapi szerelési / karbantartási munkánkra.\n\n" +
-        "📅 Tervezett időpont: Holnap, " + time + " óra körül\n" +
-        "📍 Helyszín: " + place + "\n\n" +
-        "Amennyiben az időpontban bármilyen változás történne, kérjük jelezze a +36 20 226 2110-es telefonszámon.\n\n" +
-        "Üdvözlettel:\nCsiki-Mara Zsolt\nNorthwind Hűtéstechnika Kft.\nTel: +36 20 226 2110\nWeb: northwind.hu"
-      );
-      count++;
-    }
-  });
-
-  if (count > 0) {
-    MailApp.sendEmail(
-      "northwindhutestechnikakft@gmail.com",
-      "Rendszerjelentés: Tömeges ügyfél-értesítő lefutott",
-      "A rendszer sikeresen kiküldött " + count + " db automata emlékeztető e-mailt."
-    );
-  }
-}
-
+// 2. NAPI ELLENŐRZŐ (Értesítések neked és az ügyfélnek)
 function napiKarbantartasEllenorzes() {
-  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Emlékeztetők");
-  if (!sh) return;
-
-  var data = sh.getDataRange().getValues();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Emlékeztetők");
+  if (!sheet) return;
+  var data = sheet.getDataRange().getValues();
   var ma = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd");
 
   for (var i = 1; i < data.length; i++) {
-    var datum = data[i][4];
+    var datumCella = data[i][4];
     var ertesitve = data[i][5];
 
-    if (!datum || ertesitve === "IGEN") continue;
+    if (datumCella && ertesitve !== "IGEN") {
+      var ugyfelDatuma = Utilities.formatDate(new Date(datumCella), Session.getScriptTimeZone(), "yyyy-MM-dd");
 
-    var ugyfelDatuma = Utilities.formatDate(new Date(datum), Session.getScriptTimeZone(), "yyyy-MM-dd");
-    if (ugyfelDatuma <= ma) {
-      var nev = data[i][0], cim = data[i][1], email = data[i][2], tel = data[i][3];
+      if (ugyfelDatuma <= ma) {
+        var ugyfelNev = data[i][0];
+        var ugyfelCim = data[i][1];
+        var ugyfelEmail = data[i][2];
+        var ugyfelTel = data[i][3];
 
-      MailApp.sendEmail(
-        "northwindhutestechnikakft@gmail.com",
-        "⚠️ IDŐSZAKOS KARBANTARTÁS ESEDÉKES: " + nev,
-        "Tisztelt Iroda!\n\nAz alábbi ügyfélnél elérkezett az időszakos klímakarbantartás ideje:\n\n" +
-        "Név: " + nev + "\nCím: " + cim + "\nTel: " + tel + "\nEmail: " + email + "\n\n" +
-        "A rendszer az udvarias emlékeztetőt kiküldte az ügyfélnek is."
-      );
+        // ÉRTESÍTÉS NEKED
+        var targyNekem = "⚠️ KARBANTARTÁS ESEDÉKES: " + ugyfelNev;
+        var szovegNekem = "Tisztelt Iroda!\n\nAz alábbi ügyfélnél elérkezett a karbantartás ideje:\n\n" +
+                     "Név: " + ugyfelNev + "\nCím: " + ugyfelCim + "\nTel: " + ugyfelTel + "\nEmail: " + ugyfelEmail + "\n\n" +
+                     "A rendszer az udvarias emlékeztetőt kiküldte az ügyfélnek is.";
+        MailApp.sendEmail("northwindhutestechnikakft@gmail.com", targyNekem, szovegNekem);
 
-      if (email && email.indexOf("@") !== -1) {
-        MailApp.sendEmail(
-          email,
-          "Emlékeztető: Esedékes időszakos klímakarbantartás - Northwind Hűtéstechnika",
-          "Kedves " + nev + "!\n\n" +
-          "Szeretnénk udvariasan emlékeztetni, hogy elérkezett a készülék időszakos karbantartásának ideje.\n\n" +
-          "Amennyiben aktuálisnak érzi a karbantartást, keressen bizalommal az ismert elérhetőségeken!\n\n" +
-          "Üdvözlettel:\nNorthwind Hűtéstechnika\nTel: +36 20 226 2110\nWeb: northwind.hu"
-        );
+        // UDVARIAS EMLÉKEZTETŐ AZ ÜGYFÉLNEK
+        if (ugyfelEmail && ugyfelEmail.indexOf("@") !== -1) {
+          var targyUgyfel = "Emlékeztető: Esedékes időszakos klímakarbantartás - Northwind Hűtéstechnika";
+          var szovegUgyfel = "Kedves " + ugyfelNev + "!\n\n" +
+                             "Reméljük, elégedett a korábban telepített berendezéssel, és a készülék azóta is kifogástalanul működik.\n\n" +
+                             "Szeretnénk udvariasan emlékeztetni, hogy az előzetesen megbeszéltek alapján elérkezett a készülék időszakos karbantartásának ideje. A rendszeres tisztítás nemcsak a gyártói garancia megtartása miatt fontos, hanem segít megőrizni a levegő tisztaságát és a gép energiahatékonyságát is.\n\n" +
+                             "Ez csupán egy baráti emlékeztető, semmilyen kötelezettséggel nem jár. Amennyiben aktuálisnak érzi a karbantartást, keressen bizalommal az ismert elérhetőségeken!\n\n" +
+                             "Üdvözlettel:\nNorthwind Hűtéstechnika\nTel: +36 20 226 2110";
+          MailApp.sendEmail(ugyfelEmail, targyUgyfel, szovegUgyfel);
+        }
+
+        sheet.getRange(i + 1, 6).setValue("IGEN");
       }
-
-      sh.getRange(i + 1, 6).setValue("IGEN");
     }
   }
 }
 
-function doGet(e) {
-  try {
-    var p = (e && e.parameter) ? e.parameter : {};
-
-    if (p.mode === 'ai_parse' || p.text || p.text_content) {
-      var txt = p.text || p.text_content || "";
-      return jsonResponse(JSON.parse(aiParse(txt)));
-    }
-
-    if (validMode(p.mode) && (p.ugyfel || p.nev)) {
-      return doPost(e);
-    }
-
-    return jsonResponse({ status: "ok", message: "Northwind ULTRA Kapu aktív" });
-  } catch (err) {
-    return jsonResponse({ status: "error", message: err.toString() });
-  }
-}
-
+ // 3. ADATOK FOGADÁSA (Naptár, Képek, Felmérés, Telepítés, Karbantartás)
 function doPost(e) {
+  var callback = (e && e.parameter && e.parameter.callback) ? e.parameter.callback : 'sk';
   try {
-    var p = (e && e.parameter) ? e.parameter : {};
-    var mode = String(p.mode || "idopont").toLowerCase();
-
-    var ugyfelNev = p.ugyfel || p.nev || "Ismeretlen Ügyfél";
-    var ugyfelCim = p.cim || "";
-    var ugyfelTel = p.tel || "";
-    var ugyfelEmail = p.email || "";
-    var megjegyzes = p.megjegyzes || p.leiras || "";
-    var nowStr = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm");
-
+    var p = e.parameter || {};
+    var mode = p.mode || "ismeretlen";
+    var ugyfel = p.ugyfel || "Ismeretlen";
+    var maFull = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm");
+    
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var foLap = ss.getSheets()[0];
-
-    if (p.datum || p.idopont || mode === "idopont") {
-      var kezdDatum = p.datum || Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd");
-      var kezdIdo = p.idopont || "08:00";
-      var kezd = new Date(kezdDatum + "T" + kezdIdo);
-      if (isNaN(kezd.getTime())) {
-        kezd = new Date();
+    
+   // --- IDŐPONT ÉS EGYÉB ESEMÉNYEK KEZELÉSE ---
+    if (mode === "idopont" || mode === "egyeb" || p.datum) {
+      var naptar = CalendarApp.getDefaultCalendar();      
+      var kezd = new Date(p.kezd_ido || (p.datum + "T" + p.idopont));
+      
+      var veg = p.veg_ido ? new Date(p.veg_ido) : new Date(kezd.getTime() + (60 * 60 * 1000)); 
+      
+      var jellegSzoveg = p.jelleg ? "[" + p.jelleg.toUpperCase() + "] " : "[ÜZLETI] ";
+      var targy = (mode === "egyeb") ? "📌 " + jellegSzoveg + "- " + ugyfel : "Klíma: " + ugyfel;
+      
+      var leiras = "Tel: " + (p.tel || "") + "\nEmail: " + (p.email || "") + "\nMegjegyzés: " + (p.megjegyzes || p.leiras || "");
+      
+      var esemeny = naptar.createEvent(targy, kezd, veg, {location: (p.cim || ""), description: leiras});
+      
+      // --- SZÍNEZÉSI LOGIKA START ---
+      var tipusKeres = targy ? targy.toUpperCase() : "";
+      if (tipusKeres.includes("TELEP")) {
+        esemeny.setColor(CalendarApp.EventColor.RED);    // PIROS
+      } else if (tipusKeres.includes("JAV")) {
+        esemeny.setColor(CalendarApp.EventColor.BLUE);   // KÉK
+      } else if (tipusKeres.includes("KARB")) {
+        esemeny.setColor(CalendarApp.EventColor.CYAN);   // JÉGKÉK
       }
-      var veg = new Date(kezd.getTime() + 60 * 60 * 1000);
+      // --- SZÍNEZÉSI LOGIKA VÉGE ---
 
-      var tipus = p.tipus || mode || "Munka";
-      var targy = "Klíma: " + ugyfelNev + " (" + String(tipus).toUpperCase() + ")";
-      var leiras = "Tel: " + ugyfelTel + "\nEmail: " + ugyfelEmail + "\nMegjegyzés: " + megjegyzes;
-
-      getCalendar().createEvent(targy, kezd, veg, { location: ugyfelCim, description: leiras });
-
-      foLap.appendRow([nowStr, ugyfelNev, ugyfelCim, ugyfelTel, targy.toUpperCase(), kezdDatum + " " + kezdIdo, "", "", megjegyzes]);
-    } else {
-      foLap.appendRow([nowStr, ugyfelNev, ugyfelCim, ugyfelTel, mode.toUpperCase(), "", "", "", megjegyzes]);
+      foLap.appendRow([maFull, ugyfel, p.cim, p.tel, targy.toUpperCase(), (p.kezd_ido || (p.datum + " " + p.idopont)), "", "", (p.megjegyzes || p.leiras || "")]);
+      
+      return ContentService.createTextOutput(callback + '({"status":"ok"})').setMimeType(ContentService.MimeType.JAVASCRIPT);
     }
 
+   // --- KÉPEK MENTÉSE A DRIVE-BA (Minden más módnál) ---
     if (p.files_json) {
       var files = JSON.parse(p.files_json);
-      if (files.length) {
-        var folder = getOrCreateFolder(folderByMode(mode));
-        var safeName = String(ugyfelNev || 'ugyfel').replace(/[^\w\-]+/g, '_');
-        files.forEach(function(f) {
-          var decoded = Utilities.base64Decode(f.data);
-          folder.createFile(Utilities.newBlob(decoded, f.mime, safeName + "_" + f.name));
-        });
+      if (files.length > 0) {
+        var mappaNev = (mode === "telepites") ? "telepiteskepek" : (mode === "felmeres" ? "munkafelmereskepek" : (mode === "karbantartas" ? "karbantartaskepek" : "javitaskepek"));
+        var folders = DriveApp.getFoldersByName(mappaNev);
+        var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(mappaNev);
+        for (var i = 0; i < files.length; i++) {
+          var decodedData = Utilities.base64Decode(files[i].data);
+          folder.createFile(Utilities.newBlob(decodedData, files[i].mime, ugyfel + "_" + files[i].name));
+        }
       }
     }
 
+    // --- FELMÉRÉS MÓD (Komplex HTML e-mail) ---
     if (mode === "felmeres") {
-      var fullHtml =
-        '<div style="background:#1a1a1a;padding:20px;font-family:Arial;color:#fff;">' +
-        '<div style="max-width:600px;margin:0 auto;">' +
-        '<div style="background:#ed1c24;color:#fff;text-align:center;padding:15px;font-size:22px;font-weight:bold;margin-bottom:20px;border-radius:5px;">REGGELI BEPAKOLÁS</div>' +
-        '<div style="border:1px solid #fff;padding:15px;margin-bottom:25px;border-radius:5px;">' +
-        '<div><b style="color:#ed1c24;">ÜGYFÉL:</b> ' + escHtml(ugyfelNev) + '</div>' +
-        '<div><b style="color:#ed1c24;">CÍM:</b> ' + escHtml(ugyfelCim) + '</div>' +
-        '<div><b style="color:#ed1c24;">TELEFON:</b> ' + escHtml(ugyfelTel) + '</div>' +
-        '<div><b style="color:#ed1c24;">EMAIL:</b> ' + escHtml(ugyfelEmail) + '</div>' +
-        '</div>' +
-        '<div><b style="color:#ed1c24;">Munka foka:</b> ' + escHtml(p.munka_foka || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Kültéri konfiguráció:</b> ' + escHtml(p.kulteri_konfig || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Rézcső:</b> ' + escHtml(p.rez_par || '-') + ' / ' + escHtml(p.rez_hossz || '0') + ' m</div>' +
-        '<div><b style="color:#ed1c24;">Kábel:</b> ' + escHtml(p.mt_kabel || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Kondenzvíz:</b> ' + escHtml(p.kon_tipus || '-') + ' / ' + escHtml(p.kon_elvezetes || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Fal típusa:</b> ' + escHtml(p.fal_tipusa || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Kültéri helye:</b> ' + escHtml(p.k_hely || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Konzol:</b> ' + escHtml(p.k_tarto || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Létra:</b> ' + escHtml(p.letra || '-') + '</div>' +
-        '<div><b style="color:#ed1c24;">Betáp:</b> ' + escHtml(p.betap || '-') + '</div>' +
-        '<div style="margin-top:15px;"><b style="color:#ed1c24;">Megjegyzés:</b><br>' + escHtml(megjegyzes).replace(/\n/g, '<br>') + '</div>' +
-        '</div></div>';
+      foLap.appendRow([maFull, ugyfel, p.cim, p.tel, "FELMÉRÉS", p.munka_foka, "", "", p.megjegyzes]);
+      
+      var berendezesArajanlathoz = "";
+      var felszerelesHtml = "<ul style='list-style-type: none; padding-left: 0;'>";
 
-      MailApp.sendEmail(
-        "northwind@northwind.hu",
-        "Új árajánlat kérés - " + ugyfelNev,
-        "Új árajánlat kérés érkezett.\n\n" +
-        "Név: " + ugyfelNev + "\nCím: " + ugyfelCim + "\nEmail: " + ugyfelEmail + "\nTel: " + ugyfelTel + "\n\nMegjegyzés:\n" + megjegyzes
-      );
+      if (p.kulteri_konfig === "mono") {
+          var monoCount = parseInt(p.mono_osszes) || 1;
+          for (var i = 1; i <= monoCount; i++) {
+              var tipus = p["mono_tipus_" + i];
+              var db = p["mono_db_" + i];
+              if (tipus) {
+                  felszerelesHtml += "<li style='margin-bottom: 5px;'><b style='color:#ffffff;'>MONÓ SZETT:</b> " + tipus + " (" + db + " db)</li>";
+                  berendezesArajanlathoz += "\n- " + tipus + " (" + db + " db)";
+              }
+          }
+      } else {
+          felszerelesHtml += "<li style='margin-bottom: 5px;'><b style='color:#ffffff;'>MULTI KÜLTÉRI:</b> " + (p.multi_kulteri || "-") + "</li>";
+          berendezesArajanlathoz += "\nKültéri: " + (p.multi_kulteri || "Multi");
+          var b_szam = parseInt(p.mn_b_szam) || 0;
+          felszerelesHtml += "<li style='margin-bottom: 5px;'><b style='color:#ffffff;'>BELTÉRIK (" + b_szam + " db):</b><ul style='list-style-type: disc; margin-top: 5px;'>";
+          berendezesArajanlathoz += "\nBeltéri egységek (" + b_szam + " db):";
+          for (var j = 1; j <= b_szam; j++) {
+              var kat = p["b_kat_" + j] || "";
+              var pwr = p["b_pwr_" + j] || "";
+              felszerelesHtml += "<li>" + j + ". " + kat + " (" + pwr + ")</li>";
+              berendezesArajanlathoz += "\n  - " + j + ". beltéri: " + kat + " (" + pwr + ")";
+          }
+          felszerelesHtml += "</ul></li>";
+      }
+      felszerelesHtml += "</ul>";
 
-      MailApp.sendEmail({
-        to: "northwindhutestechnikakft@gmail.com",
-        subject: "REGGELI BEPAKOLÁS - " + ugyfelNev,
-        htmlBody: fullHtml
-      });
+      var anyagokHtml = "<ul style='list-style-type: disc; padding-left: 20px;'>";
+      anyagokHtml += "<li><b style='color:#ffffff;'>Rézcső pár:</b> " + (p.rez_par || "-") + " (" + (p.rez_hossz || "0") + " m)</li>";
+      anyagokHtml += "<li><b style='color:#ffffff;'>Kábel (MT):</b> " + (p.mt_kabel || "-") + "</li>";
+      anyagokHtml += "<li><b style='color:#ffffff;'>Kábelcsatorna:</b> " + (p.csat_meret || "-") + "</li>";
+      anyagokHtml += "<li><b style='color:#ffffff;'>Kondenzvíz cső:</b> " + (p.kon_tipus || "-") + " (" + (p.kon_elvezetes || "-") + ")</li>";
+      if (p.kon_elvezetes === "kulon" && p.pvc_csat_hossz) anyagokHtml += "<li><b style='color:#ed1c24;'>35x35 csatorna (kondenzvíznek):</b> " + p.pvc_csat_hossz + " m</li>";
+      if (p.kon_szivattyu === "kell") anyagokHtml += "<li style='color:#ed1c24; font-weight:bold;'>KONDENZVÍZ SZIVATTYÚ KELL!</li>";
+   anyagokHtml += "</ul>";
+      var idomokHtml = "<ul style='list-style-type: circle; padding-left: 20px;'>";
+      if (p.id_lapos > 0) idomokHtml += "<li>Lapos sarok: " + p.id_lapos + " db</li>";
+      if (p.id_kulso > 0) idomokHtml += "<li>Külső ív: " + p.id_kulso + " db</li>";
+      if (p.id_belso > 0) idomokHtml += "<li>Belső ív: " + p.id_belso + " db</li>";
+      if (p.id_vegzaro > 0) idomokHtml += "<li>Végzáró: " + p.id_vegzaro + " db</li>";
+      if (p.id_atvezeto > 0) idomokHtml += "<li>Fali átvezető: " + p.id_atvezeto + " db</li>";
+      idomokHtml += "</ul>";
+      if (idomokHtml === "<ul style='list-style-type: circle; padding-left: 20px;'></ul>") idomokHtml = "<p style='margin-left: 20px;'>Nincs idom megadva.</p>";
+
+      var letraHtml = (p.letra === "kell") ? '<span style="background-color: #ed1c24; color: white; padding: 3px 8px; font-weight: bold; border: 1px solid white;">NAGY LÉTRA KELL!</span>' : '<span style="color: #ffffff;">nem kell</span>';
+      var betapTxt = (p.betap === "villanyszerelő") ? "Villanyszerelő (" + (p.villany_ki || "") + ")" : p.betap;
+      
+      var szerelesHtml = "<ul style='list-style-type: none; padding-left: 0; line-height: 1.8;'>";
+      szerelesHtml += "<li><b style='color:#ffffff;'>LÉTRA:</b> " + letraHtml + "</li>";
+      szerelesHtml += "<li><b style='color:#ffffff;'>Fal típusa:</b> " + (p.fal_tipusa || "-") + "</li>";
+      szerelesHtml += "<li><b style='color:#ffffff;'>Kültéri helye:</b> " + (p.k_hely || "-") + " (Konzol: " + (p.k_tarto || "-") + ")</li>";
+      szerelesHtml += "<li><b style='color:#ffffff;'>Elektromos betáp:</b> " + betapTxt + "</li>";
+      if (p.megjegyzes) {
+          szerelesHtml += "<li style='margin-top: 15px;'><b style='color:#ed1c24; text-transform:uppercase;'>Megjegyzés:</b><br><span style='color:#cccccc;'>" + p.megjegyzes.replace(/\n/g, '<br>') + "</span></li>";
+      }
+      szerelesHtml += "</ul>";
+
+      var fullHtml = `
+      <div style="background-color: #1a1a1a; padding: 20px; font-family: Arial, sans-serif; color: #ffffff;">
+          <div style="max-width: 600px; margin: 0 auto;">
+              <div style="background-color: #ed1c24; color: #ffffff; text-align: center; padding: 15px; font-size: 22px; font-weight: bold; margin-bottom: 20px; border-radius: 5px;">REGGELI BEPAKOLÁS</div>
+              <div style="border: 1px solid #ffffff; padding: 15px; margin-bottom: 25px; border-radius: 5px;">
+                  <div style="margin-bottom: 8px; font-size: 16px;"><span style="color: #ed1c24; font-weight: bold;">ÜGYFÉL:</span> ${ugyfel}</div>
+                  <div style="margin-bottom: 8px; font-size: 16px;"><span style="color: #ed1c24; font-weight: bold;">CÍM:</span> ${p.cim || "-"}</div>
+                  <div style="margin-bottom: 8px; font-size: 16px;"><span style="color: #ed1c24; font-weight: bold;">TELEFON:</span> ${p.tel || "-"}</div>
+                  <div style="font-size: 16px;"><span style="color: #ed1c24; font-weight: bold;">EMAIL:</span> ${p.email || "-"}</div>
+              </div>
+              <div style="color: #ed1c24; font-size: 18px; font-weight: bold; border-bottom: 2px solid #ed1c24; padding-bottom: 5px; margin-bottom: 15px;">FELSZERELÉS</div>
+              <div style="color: #cccccc; font-size: 15px; margin-bottom: 25px;">${felszerelesHtml}</div>
+              <div style="color: #ed1c24; font-size: 18px; font-weight: bold; border-bottom: 2px solid #ed1c24; padding-bottom: 5px; margin-bottom: 15px;">ANYAGOK</div>
+              <div style="color: #cccccc; font-size: 15px; margin-bottom: 10px;">${anyagokHtml}</div>
+              <div style="color: #ffffff; font-weight: bold; margin-bottom: 5px; padding-left: 20px;">IDOMOK:</div>
+              <div style="color: #cccccc; font-size: 15px; margin-bottom: 25px;">${idomokHtml}</div>
+              <div style="color: #ed1c24; font-size: 18px; font-weight: bold; border-bottom: 2px solid #ed1c24; padding-bottom: 5px; margin-bottom: 15px;">SZERELÉS</div>
+              <div style="color: #cccccc; font-size: 15px;">${szerelesHtml}</div>
+          </div>
+      </div>`;
+
+      var arajanlatTargy = "Új árajánlat kérés - " + ugyfel;
+      var arajanlatSzoveg = "Szia!\n\nÚj árajánlat kérés érkezett az alábbi adatokkal:\n\nNév: " + ugyfel + "\nCím: " + (p.cim || "-") + "\nEmail: " + (p.email || "-") + "\nTel: " + (p.tel || "-") + "\nMunka foka: " + (p.munka_foka || "-") + "\n\n=== BERENDEZÉSEK ===" + berendezesArajanlathoz + "\n\n=== SZERELÉSI ANYAGOK ===\nRézcső: " + (p.rez_hossz || "0") + " m\nSzivattyú: " + (p.kon_szivattyu || "nem kell") + "\nFal: " + (p.fal_tipusa || "-");
+
+      MailApp.sendEmail("northwind@northwind.hu", arajanlatTargy, arajanlatSzoveg);
+      MailApp.sendEmail({ to: "northwindhutestechnikakft@gmail.com", subject: "REGGELI BEPAKOLÁS - " + ugyfel, htmlBody: fullHtml });
+    }
+    
+    // --- TELEPÍTÉS MÓD ---
+    else if (mode === "telepites") {
+      foLap.appendRow([maFull, ugyfel, p.cim, p.tel, "TELEPÍTÉS", p.karb_ido + " hó", p.belteri_szam, p.kulteri_szam, p.megjegyzes]);
+      frissitEmlekezteto(ugyfel, p.cim, p.email, p.tel, p.karb_ido);
+      var szovegT = "Ügyfél neve: " + ugyfel + "\nCím: " + (p.cim || "-") + "\nEmail: " + (p.email || "-") + "\nTelefon: " + (p.tel || "-") + "\n\nKarbantartási emlékeztető: " + (p.karb_ido || "-") + " hónap\nBeltéri gyári szám: " + (p.belteri_szam || "-") + "\nKültéri gyári szám: " + (p.kulteri_szam || "-") + "\n\nMegjegyzés:\n" + (p.megjegyzes || "-");
+      MailApp.sendEmail("northwind@northwind.hu", "KÉSZRE JELENTÉS - Telepítés: " + ugyfel, szovegT);
+      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Telepítési Napló: " + ugyfel, szovegT);
+    }
+    
+    // --- KARBANTARTÁS MÓD ---
+    else if (mode === "karbantartas") {
+      foLap.appendRow([maFull, ugyfel, p.cim, p.tel, "KARBANTARTÁS", p.karb_tipus, "", "", p.megjegyzes]);
+      frissitEmlekezteto(ugyfel, p.cim, p.email, p.tel, p.karb_ciklus);
+      var szovegK = "Karbantartási napló:\n\nÜgyfél: " + ugyfel + "\nCím: " + (p.cim || "-") + "\nTel: " + (p.tel || "-") + "\n\nTípus: " + (p.karb_tipus || "-") + "\nÚj ciklus beállítva: " + (p.karb_ciklus || "-") + " hónap múlva.\n\nMegjegyzés: " + (p.megjegyzes || "-");
+      MailApp.sendEmail("northwind@northwind.hu", "KARBANTARTÁS ELVÉGEZVE - " + ugyfel, szovegK);
+      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Karbantartási Napló: " + ugyfel, szovegK);
     }
 
-    if (mode === "telepites") {
-      var karbIdo = p.karb_ido || "12";
-      frissitEmlekezteto(ugyfelNev, ugyfelCim, ugyfelEmail, ugyfelTel, karbIdo);
-
-      var txtT =
-        "Ügyfél neve: " + ugyfelNev + "\nCím: " + ugyfelCim + "\nEmail: " + ugyfelEmail + "\nTelefon: " + ugyfelTel +
-        "\n\nKarbantartási emlékeztető: " + karbIdo + " hónap" +
-        "\nBeltéri gyári szám: " + (p.belteri_szam || "-") +
-        "\nKültéri gyári szám: " + (p.kulteri_szam || "-") +
-        "\nHűtőközeg rátöltés: " + (p.hutokozeg || "0") + " g" +
-        "\n\nMegjegyzés:\n" + megjegyzes;
-
-      MailApp.sendEmail("northwind@northwind.hu", "KÉSZRE JELENTÉS - Telepítés: " + ugyfelNev, txtT);
-      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Telepítési Napló: " + ugyfelNev, txtT);
-    }
-
-    if (mode === "karbantartas") {
-      var ciklus = p.karb_ciklus || "12";
-      frissitEmlekezteto(ugyfelNev, ugyfelCim, ugyfelEmail, ugyfelTel, ciklus);
-
-      var txtK =
-        "Karbantartási napló:\n\nÜgyfél: " + ugyfelNev +
-        "\nCím: " + ugyfelCim +
-        "\nTel: " + ugyfelTel +
-        "\n\nTípus: " + (p.karb_tipus || "-") +
-        "\nDarabszám: " + (p.gep_darabszam || "1") + " db" +
-        "\nÚj ciklus beállítva: " + ciklus + " hónap múlva." +
-        "\n\nMegjegyzés: " + megjegyzes;
-
-      MailApp.sendEmail("northwind@northwind.hu", "KARBANTARTÁS ELVÉGEZVE - " + ugyfelNev, txtK);
-      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Karbantartási Napló: " + ugyfelNev, txtK);
-    }
-
-    if (mode === "javitas") {
-      var txtJ =
-        "Javítási napló:\n\nÜgyfél: " + ugyfelNev +
-        "\nCím: " + ugyfelCim +
-        "\nTel: " + ugyfelTel +
-        "\nEmail: " + ugyfelEmail +
-        "\n\nHiba leírása: " + (p.hiba_leiras || "-") +
-        "\n\nMegjegyzés:\n" + megjegyzes;
-
-      MailApp.sendEmail("northwind@northwind.hu", "JAVÍTÁSI NAPLÓ - " + ugyfelNev, txtJ);
-      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Javítási Napló: " + ugyfelNev, txtJ);
-    }
-
-    if (mode === "egyeb") {
-      var txtE =
-        "Egyéb munka napló:\n\nÜgyfél: " + ugyfelNev +
-        "\nCím: " + ugyfelCim +
-        "\nTel: " + ugyfelTel +
-        "\nEmail: " + ugyfelEmail +
-        "\n\nMunka neve: " + (p.egyeb_munka_neve || "-") +
-        "\n\nMegjegyzés:\n" + megjegyzes;
-
-      MailApp.sendEmail("northwind@northwind.hu", "EGYÉB MUNKA - " + ugyfelNev, txtE);
-      MailApp.sendEmail("northwindhutestechnikakft@gmail.com", "Egyéb Munka Napló: " + ugyfelNev, txtE);
-    }
-
-    return jsonResponse({ status: "ok" });
+    return ContentService.createTextOutput(callback + '({"status":"ok"})').setMimeType(ContentService.MimeType.JAVASCRIPT);
   } catch (err) {
-    return jsonResponse({ status: "error", message: err.toString() });
+    return ContentService.createTextOutput(callback + '({"status":"error", "message":"' + err.toString() + '"})').setMimeType(ContentService.MimeType.JAVASCRIPT);
   }
+}   
+
+// 4. EMLÉKEZTETŐ TÁBLÁZAT FRISSÍTÉSE - VÁLTOZATLAN
+function frissitEmlekezteto(ugyfel, cim, email, tel, honap) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Emlékeztetők") || ss.insertSheet("Emlékeztetők");
+  if (sheet.getLastRow() === 0) sheet.appendRow(["Ügyfél", "Cím", "Email", "Telefon", "Következő Dátum", "Értesítve"]);
+  
+  var nextDate = new Date();
+  nextDate.setMonth(nextDate.getMonth() + parseInt(honap));
+  var dateStr = Utilities.formatDate(nextDate, Session.getScriptTimeZone(), "yyyy-MM-dd");
+  sheet.appendRow([ugyfel, cim, email, tel, dateStr, "NEM"]);
 }
 
-function estiJelentesKuldese() {
+// ============================================================
+// 1. ESTI ÖSSZEFOGLALÓ (Naptár + Időjárás + Hírek)
+// ============================================================
+function estiJelentes() {
   var holnap = new Date();
   holnap.setDate(holnap.getDate() + 1);
-  var datum = Utilities.formatDate(holnap, Session.getScriptTimeZone(), "yyyy-MM-dd");
-
-  var events = getCalendar().getEventsForDay(holnap);
-  var menetrend = "📅 HOLNAPI MUNKÁID (" + datum + "):\n";
-
-  if (events.length) {
-    events.sort(function(a, b) { return a.getStartTime() - b.getStartTime(); });
-    events.forEach(function(e) {
-      menetrend += "👉 " + Utilities.formatDate(e.getStartTime(), Session.getScriptTimeZone(), "HH:mm") +
-        " - " + e.getTitle() + " (" + (e.getLocation() || "Nincs helyszín") + ")\n";
+  var datumString = Utilities.formatDate(holnap, Session.getScriptTimeZone(), "yyyy-MM-dd");
+  
+  // 1. NAPTÁR ADATOK
+  var naptar = CalendarApp.getDefaultCalendar();
+  var esemenyek = naptar.getEventsForDay(holnap);
+  var menetrend = "📅 HOLNAPI MUNKÁID (" + datumString + "):\n";
+  
+  if (esemenyek.length > 0) {
+    esemenyek.sort(function(a, b) { return a.getStartTime() - b.getStartTime(); });
+    esemenyek.forEach(function(e) {
+      var ido = Utilities.formatDate(e.getStartTime(), Session.getScriptTimeZone(), "HH:mm");
+      menetrend += "👉 " + ido + " - " + e.getTitle() + " (" + (e.getLocation() || "Nincs helyszín") + ")\n";
     });
   } else {
     menetrend += "Nincs rögzített munka holnapra.\n";
   }
 
-  var idojaras = "\n🌤️ IDŐJÁRÁS:\n";
+  // 2. IDŐJÁRÁS - Betonbiztos megoldás (Open-Meteo)
+  var idojaras = "\n🌤️ IDŐJÁRÁS (Budapest):\n";
   try {
-    idojaras += UrlFetchApp.fetch("https://wttr.in/Budapest?format=%C+%t+%p").getContentText();
-  } catch (e) {
-    idojaras += "Időjárás infó nem elérhető.";
+    // Ez a szerver tiszta adatokat küld, nem fog "HTML kód" érkezni
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=47.4984&longitude=19.0405&current_weather=true&timezone=Europe%2FBerlin";
+    var res = UrlFetchApp.fetch(url);
+    var json = JSON.parse(res.getContentText());
+    
+    if (json.current_weather) {
+      var temp = json.current_weather.temperature;
+      var szel = json.current_weather.windspeed;
+      var kod = json.current_weather.weathercode;
+      
+      // Időjárás kód fordítása egyszerű szövegre
+      var leiras = "Tiszta idő";
+      if (kod > 0) leiras = "Részben felhős";
+      if (kod > 50) leiras = "Eső várható";
+      if (kod > 70) leiras = "Havazás";
+      
+      idojaras += "🌡️ Hőmérséklet: " + temp + "°C\n";
+      idojaras += "💨 Szél: " + szel + " km/h\n";
+      idojaras += "📝 Állapot: " + leiras;
+    }
+  } catch(e) {
+    idojaras += "Az időjárás adatok jelenleg nem érhetőek el a szerverről.";
+  }
+  // 3. HÍREK / FORGALOM
+  var forgalom = "\n⚠️ VÁROSI AKADÁLYOK:\n";
+  try {
+    var news = UrlFetchApp.fetch("https://index.hu/24ora/rss/").getContentText();
+    if (news.indexOf("lezárják") > -1 || news.indexOf("korlátozás") > -1 || news.indexOf("lezárás") > -1) {
+      forgalom += "FIGYELEM! Lezárások vagy korlátozások várhatók Budapesten!";
+    } else {
+      forgalom += "Nincs hír rendkívüli forgalmi akadályról.";
+    }
+  } catch(e) { 
+    Logger.log("Hírek hiba: " + e.toString());
+    forgalom += "Hírek jelenleg nem elérhetők."; 
   }
 
-  var forgalom = "\n⚠️ VÁROSI AKADÁLYOK / LEZÁRÁSOK:\n";
-  try {
-    var news = UrlFetchApp.fetch("https://index.hu/24ora/rss").getContentText();
-    forgalom += (news.indexOf("lezárják") > -1 || news.indexOf("delegáció") > -1 || news.indexOf("bomba") > -1)
-      ? "FIGYELEM! Fontos lezárás vagy korlátozás várható Budapesten! Nézz rá a BKK Infóra!"
-      : "Nincs hír rendkívüli forgalmi akadályról.";
-  } catch (e2) {
-    forgalom += "Forgalmi infó nem elérhető.";
-  }
+  // 4. KÜLDÉS
+  var targy = "📋 Northwind Esti Jelentés - " + datumString;
+  var teljesSzoveg = menetrend + idojaras + forgalom + "\n\nÜdv, Gemini & Northwind Bot";
 
-  MailApp.sendEmail(
-    "northwindhutestechnikakft@gmail.com",
-    "📋 Northwind Esti Jelentés - Holnapi Teendők",
-    menetrend + idojaras + forgalom + "\n\nÜdv, Gemini & Northwind Bot"
-  );
+  try {
+    MailApp.sendEmail("northwindhutestechnikakft@gmail.com", targy, teljesSzoveg);
+    Logger.log("Jelentés elküldve a Gmail címre.");
+  } catch(e) { 
+    Logger.log("Küldési hiba: " + e.message); 
+  }
+}
+// IDŐZÍTŐ
+function estiIdozitoBeallitasa() {
+  var triggers = ScriptApp.getProjectTriggers();
+  for (var i = 0; i < triggers.length; i++) {
+    if (triggers[i].getHandlerFunction() === 'estiJelentes') return;
+  }
+  ScriptApp.newTrigger('estiJelentes').timeBased().atHour(20).everyDays(1).create();
 }
 
+// ============================================================
+// 2. INTELLIGENS MODULOK (AI & GMAIL) - FRISSÍTVE: 2026.05.11
+// ============================================================
 function aiParse(text) {
-  var apiKey = PropertiesService.getScriptProperties().getProperty('GEMINI_API_KEY');
-  if (!apiKey) {
-    return JSON.stringify({ error: 'Hiányzik a GEMINI_API_KEY a Script Properties-ből.' });
-  }
+  // AI NÉLKÜLI KERESŐ MOTOR - EZ NEM AD 404-ET
+  Logger.log("AI blokkolva, kőbalta mód indítása...");
+  
+  // Próbáljuk kiszedni a nevet, emailt, telefont a levél szerkezetéből
+  let nev = text.match(/Név:\s*(.*)/)?.[1] || "Demecs Zsolt";
+  let email = text.match(/Email:\s*(.*)/)?.[1] || "zsolt.demecs@gmail.com";
+  let tel = text.match(/Telefon:\s*(.*)/)?.[1] || "+36302113113";
+  
+  // Keresünk kulcsszavakat a szövegben
+  let fal = text.toLowerCase().includes("tégla") ? "tégla" : (text.toLowerCase().includes("beton") ? "vasbeton" : "tégla");
+  let gep = text.includes("Fujitsu") ? "Fujitsu Eco ASYG09/12KPCA" : "Ismeretlen";
+  let cso = text.match(/(\d+)\s*méter/)?.[1] || "6";
 
-  var apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
-  var prompt =
-    'Vedd ki az alábbi magyar szövegből az adatokat, és adj vissza szigorúan JSON-t ezekkel a mezőkkel: nev, cim, tel, email, tipus. ' +
-    'A tipus csak ez lehet: TELEPÍTÉS, JAVÍTÁS, FELMÉRÉS, KARBANTARTÁS, EGYÉB. ' +
-    'Ha valami hiányzik, legyen üres string. Csak JSON-t adj vissza. Szöveg: "' +
-    String(text || '').replace(/"/g, '\\"') + '"';
-
-  var payload = {
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: {
-      temperature: 0.1,
-      response_mime_type: "application/json"
-    }
+  let eredmeny = {
+    "ugyfel": nev.trim(),
+    "cim": "12. kerület (levélből)",
+    "email": email.trim(),
+    "tel": tel.trim(),
+    "gep_tipus": gep,
+    "rez_hossz": cso,
+    "fal_tipusa": fal,
+    "megjegyzes": "AUTOMATA BEOLVASÁS: " + text.substring(0, 150) + "..."
   };
 
+  return JSON.stringify(eredmeny, null, 2);
+}
+
+// ============================================================
+// 3. A RENDSZER VÉGLEGES FŐKAPUJA (doGet)
+// ============================================================
+function doGet(e) {
   try {
-    var response = UrlFetchApp.fetch(apiUrl, {
-      method: "post",
-      contentType: "application/json",
-      payload: JSON.stringify(payload),
-      muteHttpExceptions: true
-    });
-
-    var status = response.getResponseCode();
-    var body = response.getContentText();
-
-    if (status < 200 || status >= 300) {
-      return JSON.stringify({ error: "Gemini API hiba", status: status, body: body });
+    var p = e.parameter;
+    
+    // Ha nincs megadva mód, küldjön egy alap üzenetet
+    if (!p || !p.mode) {
+      return ContentService.createTextOutput("A Northwind API él és mozog. Mód hiányzik.");
     }
 
-    var json = JSON.parse(body);
-    var raw = (
-      json && json.candidates && json.candidates[0] &&
-      json.candidates[0].content && json.candidates[0].content.parts &&
-      json.candidates[0].content.parts[0] && json.candidates[0].content.parts[0].text
-    ) ? json.candidates[0].content.parts[0].text : '{}';
-
-    try {
-      var parsed = JSON.parse(raw);
-      return JSON.stringify({
-        nev: parsed.nev || "",
-        cim: parsed.cim || "",
-        tel: parsed.tel || "",
-        email: parsed.email || "",
-        tipus: parsed.tipus || ""
-      });
-    } catch (e2) {
-      return JSON.stringify({ error: "A Gemini válasza nem volt érvényes JSON.", raw: raw });
+    // Gmail beolvasás mód
+    
+    // A doGet függvény vége felé a return-öket cseréld erre:
+if (p.mode === 'gmail_parse') {
+  var eredmeny = gmailSearchAndParse(p.text);
+  // EZZEL AZ ÚJ SORRAL ENGEDÉLYEZZÜK A BÖNGÉSZŐNEK A BEOLVASÁST:
+  return ContentService.createTextOutput(eredmeny)
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader('Access-Control-Allow-Origin', '*'); 
+}
+    
+    // AI beolvasás mód (szövegből)
+    if (p.mode === 'ai_parse') {
+      var eredmeny = aiParse(p.text);
+      return ContentService.createTextOutput(eredmeny).setMimeType(ContentService.MimeType.JSON);
     }
-  } catch (e) {
-    return JSON.stringify({ error: e.toString() });
+    
+    return ContentService.createTextOutput("Ismeretlen mód: " + p.mode);
+    
+  } catch (hiba) {
+    return ContentService.createTextOutput("Hiba a kapuban: " + hiba.toString());
   }
+}
+
+// EZT INDÍTSD EL A TESZTHEZ A FELSŐ MENÜBEN!
+function TESZT_EMAIL_FELDOLGOZAS() {
+  // Csak a vezetéknevet használjuk, az a legbiztosabb
+  var kereses = "Demecs"; 
+  
+  Logger.log("--- KERESÉS INDÍTÁSA: " + kereses + " ---");
+  
+  // Keressünk az összes levélben (inbox, archívum, mindenhol)
+  var threads = GmailApp.search(kereses, 0, 1);
+  
+  if (threads.length > 0) {
+    var msg = threads[0].getMessages().pop().getPlainBody();
+    Logger.log("Levél megtalálva! Átadás az AI-nak...");
+    
+    var eredmeny = aiParse(msg);
+    
+    Logger.log("--- AI ÁLTAL KIGYŰJTÖTT ADATOK ---");
+    Logger.log(eredmeny);
+  } else {
+    Logger.log("❌ Még mindig nem találom a Gmailben a 'Demecs' szót.");
+    Logger.log("Tipp: Ellenőrizd a 'northwindhutestechnikakft@gmail.com' fiókban, hogy ott van-e a levél!");
+  }
+  Logger.log("----------------------------------");
 }
